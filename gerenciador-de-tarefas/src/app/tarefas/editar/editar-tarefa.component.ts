@@ -17,7 +17,7 @@ export class EditarTarefaComponent {
     private router: Router){}
 
     ngOnInit(){
-      let id = this.route.snapshot.params['id'];
+      let id =+ this.route.snapshot.params['id'];
       this.tarefa = this.tarefaService.buscarPorId(id);
     }
 

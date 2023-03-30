@@ -1,6 +1,7 @@
 <h1>Tarefas</h1>
 
-<table class="table table-striped table-bordered table-hover">
+<table *ngIf="tarefas.length > 0"
+  class="table table-striped table-bordered table-hover">
   <tbody>
     <tr>
     	<th>Tarefa</th>
@@ -15,12 +16,14 @@
     </tr>
     <tr *ngFor="let tarefa of tarefas">
       <td
+        [tarefaConcluida]="tarefa.concluida"
         [class.success]="!tarefa.concluida">
         {{tarefa.nome}}
       </td>
       <td style="width: 70px" class="text-center">
         <input 
           type="checkbox"
+          (click)="alterarStatus(tarefa)"
           [value]="tarefa.id"
           [checked]="tarefa.concluida">
       </td>
@@ -32,7 +35,7 @@
             aria-hidden="true"></span> Editar
         </a>
         <a href="#" title="Remover" alt="Remover" 
-          
+          (click)="remover($event, tarefa)"
           class="btn btn-xs btn-danger">
           <span class="glyphicon glyphicon-remove" 
             aria-hidden="true"></span> Remover
@@ -42,4 +45,4 @@
   </tbody>
 </table>
 
-<p>Nenhuma tarefa cadastrada.</p>
+<p *ngIf="tarefas.length <= 0">Nenhuma tarefa cadastrada.</p>
