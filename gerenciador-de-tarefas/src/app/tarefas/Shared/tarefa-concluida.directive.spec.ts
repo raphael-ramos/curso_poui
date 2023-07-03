@@ -1,4 +1,4 @@
-import { TarefaConcluidaDirective } from './tarefa-concluida.directive';
+import { TarefaConcluidaDirective } from '../Shared/tarefa-concluida.directive';
 
 describe('TarefaConcluidaDirective', () => {
   it('should create an instance', () => {

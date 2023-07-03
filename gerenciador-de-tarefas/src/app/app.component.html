@@ -1,12 +1,13 @@
-<div class="container-fluid">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-          {{ title }}
-        </a>
+<div class="po-wrapper">
+  <po-toolbar p-title="AppName"></po-toolbar>
+
+  <po-menu [p-menus]="menus"></po-menu>
+
+  <po-page-default p-title="Gerenciador de tarefas">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+          <router-outlet></router-outlet>
       </div>
-    </div>
-  </nav>
-  <router-outlet></router-outlet>
+    </nav>
+  </po-page-default>
 </div>

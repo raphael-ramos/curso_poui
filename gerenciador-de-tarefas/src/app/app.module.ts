@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { TarefasModule } from './tarefas';
+import { PoModule } from '@po-ui/ng-components';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TarefasModule } from './tarefas';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TarefasModule
+    TarefasModule,
+    PoModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

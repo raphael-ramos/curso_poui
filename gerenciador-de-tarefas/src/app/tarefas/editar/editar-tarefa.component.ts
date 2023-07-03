@@ -14,17 +14,18 @@ export class EditarTarefaComponent {
 
   constructor(private tarefaService: TarefaService,
     private route: ActivatedRoute,
-    private router: Router){}
+    private router: Router
+  ){}
 
-    ngOnInit(){
-      let id =+ this.route.snapshot.params['id'];
-      this.tarefa = this.tarefaService.buscarPorId(id);
-    }
+  ngOnInit(){
+    let id =+ this.route.snapshot.params['id'];
+    this.tarefa = this.tarefaService.buscarPorId(id);
+  }
 
-    atualizar(): void{
-      if(this.formTarefa.form.valid){
-        this.tarefaService.atualizar(this.tarefa);
-        this.router.navigate(['/tarefas']);
-      }
+  atualizar(): void{
+    if(this.formTarefa.form.valid){
+      this.tarefaService.atualizar(this.tarefa);
+      this.router.navigate(['/tarefas']);
     }
+  }
 }
