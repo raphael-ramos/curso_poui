@@ -8,16 +8,24 @@ import { PoTemplatesModule } from '@po-ui/ng-templates';
 
 import { ProtheusLibCoreModule } from '@totvs/protheus-lib-core';
 
+import { AppRoutingModule } from './app-routing.model';
+
+import { FornecedorFormComponent } from './fornecedor-form/fornecedor-form.component';
+import { FornecedorListComponent } from './fornecedor-list/fornecedor-list.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FornecedorFormComponent,
+    FornecedorListComponent
   ],
   imports: [
     BrowserModule,
     PoModule,
+    AppRoutingModule,
     RouterModule.forRoot([]),
     PoTemplatesModule,
-    ProtheusLibCoreModule
+    //ProtheusLibCoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,7 +3,9 @@
 
   <po-menu [p-menus]="menus"></po-menu>
 
-  <po-page-default p-title="AppName">
-    <p> AppName page </p>
-  </po-page-default>
+  <nav class="nav navbar-default">
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </nav>
 </div>
